@@ -56,7 +56,7 @@ async function handlerSubmit(e) {
   e.preventDefault();
   const data = new FormData(searchForm);
   const idOrName = data.get("idOrName");
-  const pokemonObj = await getPokemon(idOrName);
+  const pokemonObj = await getPokemon(idOrName.toLowerCase());
   createPokemon(pokemonObj);
   renderPokemon(myPokemon);
 }
